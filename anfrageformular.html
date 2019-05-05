@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <title>Anfrageformular</title>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" type="image/png" href="image/hsma_favicon.png">
+  <link rel="stylesheet" href="css/bvexternes.css">
+</head>
+<body style="background-color: #F0F8FF;">
+  <img src="image/hsma.png" alt="Hochschule Mannheim" width="1000" height="200">
+  <nav>
+    <div class="wrapper">
+    <ul>
+      <li> <a href="index.html">Home</a></li>
+      <li><a href="person.html">Professoren</a></li>
+      <li><a href="preisinfo.html">Preisinformation</a></li>
+      <li><a href="anfrageformular.html">Kurs-Anfrageformular</a></li>
+      <li><a href="contact.html">Kontakt</a></li>
+    </ul>
+    </div>
+  </nav>
+  <h1>Kurs-Anfrageformular</h1>
+  <p>Willkommen zum unseren IT-Trainer Webseite</p>
+  <p>Haben Sie Wünsch auf einen Kurs? Dann füllen Sie diese Formular aus. Wir machen einen Kurs für Sie</p>
+  <form action="index.html" method="post">
+    <table class="formular">
+      <tr>
+        <td>Nachname: </td>
+
+        <td><input type="text" name="nachname" placeholder="Schreiben Sie Ihren Nachnamen"></td>
+      </tr>
+      <tr>
+        <td>Vorname:</td>
+        <td><input type="text" name="vorname" placeholder="Schreiben Sie Ihren Vornamen"></td>
+      </tr>
+
+      <tr>
+        <td>Firma:</td>
+        <td><input type="text" name="firma" placeholder="Schreiben Sie Ihre Firma"></td>
+      </tr>
+      <tr>
+        <td>Emailadresse:</td>
+        <td><input type="email" name="email" placeholder="Schreiben Sie Ihre Emailadresse"></td>
+      </tr>
+      <tr>
+        <td>Telephonenummer::</td>
+        <td><input type="text" name="telephone" placeholder="Schreiben Sie Ihre Handynummer"></td>
+      </tr>
+      <tr>
+        <td>Wählen Sie Ihren Wünschtermin</td>
+        <td><input type="date" name="termin" ></td>
+      </tr>
+      <tr>
+        <td>Wählen Sie einen Kurs:</td>
+        <td><select name="kurs">
+          <option value="BPMN-Anfänger">BPMN-Anfänger</option>
+          <option value="BPMN-Intermediate">BPMN-Intermediate</option>
+          <option value="BPMN-Advance">BPMN-Advance</option>
+        </select></td>
+      </tr>
+      <tr>
+        <td>Teilnehmeranzahl: </td>
+        <td>
+          <input type="number" name="anzahl" min="1" max="20" placeholder="Teilnehmeranzahl">
+        </td>
+      </tr>
+      <tr>
+        <td>Wollen Sie Ihre Datenspeichern</td>
+        <td><input type="checkbox" name="checkbox"></td>
+      </tr>
+      <tr>
+        <td>Nachrichten an mich</td>
+        <td><textarea name="nachrichten" placeholder ="Schreiben Sie eine Nachrichten" rows="8" cols="40"></textarea></td>
+      </tr>
+      <tr>
+      <td><button type="button" name="submit">Submit</button></td>
+      <td></td>
+      </tr>
+    </table>
+  </form>
+  <nav>
+    <a href="index.html">Zurück zur Homepage</a>
+    <a href="contact.html" >Kontakt</a>
+  </nav>
+
+</body>
+
+</html>
