@@ -1,0 +1,38 @@
+version: '3'
+services:
+  postgres:
+    image: postgres
+    container_name: postgres
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTRES_PASSWORD: postgres
+    volumes:
+      - ./.docker-volumes/postgres-init:/docker-entrypoint-initdb.d/
+
+  jobmanager:
+    image: ${FLINK_DOCKER_IMAGE_NAME:-flink}
+    container_name: jobmanager
+    expose:
+      - 6123
+    ports:
+      - 8081:8081
+    command: jobmanager
+    environment:
+      - JOB_MANAGER_RPC_ADDRESS=jobmanager
+
+
+  taskmanager:
+    image: ${FLINK_DOCKER_IMAGE_NAME:-flink}
+    container_name: taskmanager
+    expose:
+      - 6121
+      - 6122
+    depends_on:
+      - jobmanager
+    command: taskmanager
+    links:
+      - jobmanager:jobmanager
+    environment:
+      - JOB_MANAGER_RPC_ADDRESS=jobmanager
